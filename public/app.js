@@ -6,7 +6,7 @@ emaFront.controller("EmaCtrl",['$http', function($http){
 
 
     app.register = function(){
-        document.getElementById('content').src = 'http://localhost:9222';
+        document.getElementById('content').src = 'http://localhost:9222/register.html';
         console.log(document.getElementById('content'));
     };
 
