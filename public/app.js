@@ -6,17 +6,17 @@ emaFront.controller("EmaCtrl",['$http', function($http){
 
 
     app.register = function(){
-        document.getElementById('content').src = 'http://localhost:9222/register.html';
+        document.getElementById('content').src = 'http://' + window.location.hostname + ':9222/';
         console.log(document.getElementById('content'));
     };
 
     app.transferAuthorship = function(){
-        document.getElementById('content').src = 'http://localhost:9333/transferFileForm.html';
+        document.getElementById('content').src = 'http://' + window.location.hostname + ':9333/transferFileForm.html';
         console.log(document.getElementById('content'));
     };
 
     app.addAudio = function(){
-        document.getElementById('content').src = 'http://localhost:9333/uploadFileForm.html';
+        document.getElementById('content').src = 'http://' + window.location.hostname + ':9333/uploadFileForm.html';
         console.log(document.getElementById('content'));
     };
 
