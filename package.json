@@ -1,0 +1,24 @@
+{
+  "name": "emafront",
+  "version": "1.0.0",
+  "description": "Frontoffice for EMA services",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desile/EMAFront.git"
+  },
+  "author": "DeSile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desile/EMAFront/issues"
+  },
+  "homepage": "https://github.com/desile/EMAFront#readme"
+}

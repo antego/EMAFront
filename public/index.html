@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEAN App</title>
+    <link href="imports/bootstrap.css" rel="stylesheet">
+    <link href="imports/bootstrap-theme.css" rel="stylesheet">
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+        #outerContent{
+            background: url("images/studio.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        .navbar-custom {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+    </style>
+    <script>
+        function resizeIframe(obj) {
+            //obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            var header = document.getElementById('header');
+            obj.style.width =  + window.innerWidth + 'px';
+            obj.style.height =  + window.innerHeight - header.clientHeight + 'px';
+        }
+
+        window.onload = function(event){
+            var header = document.getElementById('header');
+            var outerContent = document.getElementById('outerContent');
+            //outerContent.setAttribute("style","display:block;width:" + window.width + "px; height:" + window.height - header.clientHeight + "px");
+            outerContent.style.width =  + window.innerWidth + 'px';
+            outerContent.style.height =  + window.innerHeight - header.clientHeight + 'px';
+            //outerContent.width =  + window.innerWidth + 'px';
+            //outerContent.height =  + window.innerHeight - header.clientHeight + 'px';
+            console.log(outerContent.style.width);
+
+        }
+
+        window.onresize = function(event) {
+            var iframe = document.getElementById('content');
+            var header = document.getElementById('header');
+            var outerContent = document.getElementById('outerContent');
+            iframe.style.width =  + window.innerWidth + 'px';
+            iframe.style.height =  + window.innerHeight - header.clientHeight + 'px';
+            outerContent.style.width =  + window.innerWidth + 'px';
+            outerContent.style.height =  + window.innerHeight - header.clientHeight + 'px';
+        };
+    </script>
+</head>
+<body ng-app="emaFront" ng-controller="EmaCtrl as app">
+
+<div id="header">
+
+    <nav class="navbar navbar-inverse navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" ng-click="app.title()">Ethereum Music Authorship</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="signUpLink" ng-click="app.register()">Rightholder registration</a></li>
+                <li><a href="#" id="loginLink" ng-click="app.addAudio()">Add rights on composition</a></li>
+                <li><a href="#" ng-click="app.transferAuthorship()">Transfer rights</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1>EMA</h1>
+                <p>Что-нибудь охуенное про блокчейны, инновации и кени веста</p>
+            </div>
+        </div>
+
+    -->
+</div>
+<div id="outerContent">
+    <iframe src="main.html" id="content" frameborder="0" scrolling="no" onload="resizeIframe(this)">
+        Ваш браузер не поддерживает плавающие фреймы!
+    </iframe>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="imports/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="imports/bootstrap.js"></script>
+<script src="imports/angular.js"></script>
+<script src="imports/ui-bootstrap.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
